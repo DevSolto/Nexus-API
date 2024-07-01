@@ -3,7 +3,9 @@ import fastifyCors from '@fastify/cors';
 import { userController } from './controllers/userController';
 import { authController } from './controllers/authController';
 
-const server = fastify();
+const server = fastify({
+  logger: true, // Habilitar logs
+});
 
 const port = Number(process.env.PORT) || 4000;
 
@@ -17,8 +19,8 @@ server.register(authController);
 
 server.listen({ port, host: '0.0.0.0' }, (err, address) => {
   if (err) {
-    console.error(err);
+    server.log.error(err); // Use o logger do Fastify
     process.exit(1);
   }
-  console.log(`Server is running at ${address}`);
+  server.log.info(`Server is running at ${address}`);
 });
