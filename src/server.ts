@@ -4,12 +4,12 @@ import { authController } from './controllers/authController';
 
 const server = fastify();
 
-const port = process.env.PORT || 4000;
+const port = Number(process.env.PORT) || 4000;
 
 server.register(userController);
 server.register(authController);
 
-server.listen({ port: Number(port) }, (err, address) => {
+server.listen({ port, host: '0.0.0.0' }, (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);

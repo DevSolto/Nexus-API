@@ -1,3 +1,5 @@
 /node_modules
 /dist
 .env
+git config --global user.email "souto.santiago@academico.ifpb.edu.br"
+  git config --global user.name "santiago"
