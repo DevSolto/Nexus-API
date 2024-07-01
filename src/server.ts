@@ -1,5 +1,5 @@
 import fastify from 'fastify';
-import fastifyCors from '@fastify/cors';
+import cors from '@fastify/cors';
 import { userController } from './controllers/userController';
 import { authController } from './controllers/authController';
 
@@ -10,7 +10,7 @@ const server = fastify({
 const port = Number(process.env.PORT) || 4000;
 
 // Configure CORS
-server.register(fastifyCors, {
+server.register(cors, {
   origin: true, // Permite qualquer origem, ajuste conforme necessário
 });
 
