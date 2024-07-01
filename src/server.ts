@@ -20,4 +20,5 @@ server.listen({ port, host: '0.0.0.0' }, (err, address) => {
     console.error(err);
     process.exit(1);
   }
-  console.log(`Server is running at
+  console.log(`Server is running at ${address}`);
+});
