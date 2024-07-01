@@ -1,7 +1,7 @@
 // prisma/schema.prisma
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://neondb_owner:YtXqQjI6B8ym@ep-gentle-wave-a5hs5khg-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
   // uncomment next line if you use Prisma <5.10
   // directUrl = env("DATABASE_URL_UNPOOLED")
 }
